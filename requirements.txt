@@ -1,0 +1,9 @@
+pandas
+numpy
+streamlit
+streamlit-option-menu
+mysql-connector-python
+plotly
+prophet
+matplotlib
+supabase
