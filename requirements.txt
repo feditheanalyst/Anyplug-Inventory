@@ -7,3 +7,4 @@ plotly
 prophet
 matplotlib
 supabase
+st-supabase-connection
