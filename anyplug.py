@@ -72,7 +72,7 @@ supabase = init_connection()
 conn = st.connection("supabase",type=SupabaseConnection)
 
 # Perform query.
-rows = conn.query("*", table="any-plug", ttl="10m").execute()
+rows = conn.query("*", table="plug", ttl="10m").execute()
 
 
 if selected == "Data Entry":
@@ -155,14 +155,14 @@ if selected == "Data Entry":
         # connection.commit()
         # st.success("Data Saved")
     try:
-        supabase.table("any-plug").insert(data).execute()
+        supabase.table("plug").insert(data).execute()
         st.success("Data Saved")
     except Exception as e:
         st.error("Error saving data:", e)
 
 elif selected == "Analytics":
     # Retrieve data from Supabase using the connection
-    result = conn.query("select * from any-plug").execute()
+    result = conn.query("select * from plug").execute()
 
     # Convert the result to a Pandas DataFrame
     df1 = pd.DataFrame(result.data, columns=result.columns)
@@ -281,7 +281,7 @@ elif selected == "Analytics":
 
 if selected == "Forecast":
     # Retrieve data from Supabase using the connection
-    result = conn.query("select * from any-plug").execute()
+    result = conn.query("select * from plug").execute()
 
     # Convert the result to a Pandas DataFrame
     df1 = pd.DataFrame(result.data, columns=result.columns)
