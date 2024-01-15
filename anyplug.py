@@ -158,7 +158,7 @@ if selected == "Data Entry":
         supabase.table("plug").insert(data).execute()
         st.success("Data Saved")
     except Exception as e:
-        st.error("Error saving data:", e)
+        st.error("Error saving data")
 
 elif selected == "Analytics":
     # Retrieve data from Supabase using the connection
