@@ -123,15 +123,15 @@ if selected == "Data Entry":
         customer_phone = st.session_state.customer_phone
         product_name = st.session_state.product_name
         product_description = st.session_state.product_description
-        state = st.session_state.state
-        payment_method =st.session_state.payment_method
-        order_id = st.session_state.order_id
         initial_price = st.session_state.initial_price
         amount_sold = st.session_state.amount_sold
         discount = st.session_state.discount
         stock_quantity = st.session_state.stock_quantity
-        country = st.session_state.country
+        order_id = st.session_state.order_id
         order_date = st.session_state.order_date
+        state = st.session_state.state
+        country = st.session_state.country
+        payment_method =st.session_state.payment_method
 
     data = {
         "customer_id" : customer_id,
@@ -139,15 +139,15 @@ if selected == "Data Entry":
         "customer_phone": customer_phone,
         "product_name": product_name,
         "product_description": product_description,
-        "state": state,
-        "payment_method":payment_method,
-        "order_id": order_id,
         "initial_price": initial_price,
         "amount_sold": amount_sold,
         "discount": discount,
         "stock_quantity": stock_quantity,
+        "order_id": order_id,
+        "order_date": order_date,
+        "state": state,
         "country": country,
-        "order_date": order_date
+        "payment_method":payment_method
     }
         # sql = "insert into dataass(customer_id, customer_email, customer_phone, product_name, product_description, initial_price, amount_sold, discount, stock_quantity, order_id, order_date, state, country, payment_method) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         # val = (customer_id, customer_email, customer_phone, product_name, product_description, initial_price, amount_sold, discount, stock_quantity, order_id, order_date, state, country, payment_method)
