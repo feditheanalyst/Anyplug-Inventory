@@ -118,7 +118,7 @@ if selected == "Data Entry":
         submitted = st.form_submit_button("Save Data")
     if submitted:
         # Collect data from form fields
-        form_data = submitted.form_data
+        form_data = st.form_values(key='my_form')
         customer_id = form_data['customer_id'] # Access from session state
         customer_email = form_data['customer_email']
         customer_phone = form_data['customer_phone']
