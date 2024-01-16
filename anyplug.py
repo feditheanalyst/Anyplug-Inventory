@@ -59,7 +59,6 @@ st.markdown(hide_st_style, unsafe_allow_html = True)
 # connection = mysql.connector.connect(**mydb)
 # cursor = connection.cursor()
 
-
 # Initialize connection.
 # Uses st.cache_resource to only run once.
 @st.cache_resource
@@ -73,7 +72,6 @@ conn = st.connection("supabase",type=SupabaseConnection)
 
 # Perform query.
 rows = conn.query("*", table="plug", ttl="10m").execute()
-
 
 if selected == "Data Entry":
     # File uploader
@@ -116,6 +114,7 @@ if selected == "Data Entry":
     # submit button
     with st.form(key='my_form'):    
         submitted = st.form_submit_button("Save Data")
+
     if submitted:
         # Collect data from form fields
         form_data = st.form_values(key='my_form')
@@ -134,32 +133,28 @@ if selected == "Data Entry":
         country = form_data['country']
         payment_method = form_data['payment_method']
 
-        data = {
-            "customer_id" : customer_id,
-            "customer_email": customer_email,
-            "customer_phone": customer_phone,
-            "product_name": product_name,
-            "product_description": product_description,
-            "initial_price": initial_price,
-            "amount_sold": amount_sold,
-            "discount": discount,
-            "stock_quantity": stock_quantity,
-            "order_id": order_id,
-            "order_date": order_date,
-            "state": state,
-            "country": country,
-            "payment_method":payment_method
-        }
-            # sql = "insert into dataass(customer_id, customer_email, customer_phone, product_name, product_description, initial_price, amount_sold, discount, stock_quantity, order_id, order_date, state, country, payment_method) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-            # val = (customer_id, customer_email, customer_phone, product_name, product_description, initial_price, amount_sold, discount, stock_quantity, order_id, order_date, state, country, payment_method)
-            # cursor.execute(sql, val)
-            # connection.commit()
-            # st.success("Data Saved")
-        try:
-            supabase.table("plug").insert(data).execute()
-            st.success("Data Saved")
-        except Exception as e:
-            st.error("Error saving data")
+    data = {
+        "customer_id" : customer_id,
+        "customer_email": customer_email,
+        "customer_phone": customer_phone,
+        "product_name": product_name,
+        "product_description": product_description,
+        "initial_price": initial_price,
+        "amount_sold": amount_sold,
+        "discount": discount,
+        "stock_quantity": stock_quantity,
+        "order_id": order_id,
+        "order_date": order_date,
+        "state": state,
+        "country": country,
+        "payment_method":payment_method
+    }
+        
+    try:
+        supabase.table("plug").insert(data).execute()
+        st.success("Data Saved")
+    except Exception as e:
+        st.error("Error saving data")
 
 elif selected == "Analytics":
     # Retrieve data from Supabase using the connection
