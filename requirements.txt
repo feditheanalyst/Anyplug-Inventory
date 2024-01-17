@@ -1,0 +1,10 @@
+pandas
+numpy
+streamlit == 1.30.0
+streamlit-option-menu
+mysql-connector-python
+plotly
+prophet
+matplotlib
+supabase
+st-supabase-connection 
