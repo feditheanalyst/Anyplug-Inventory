@@ -117,20 +117,20 @@ if selected == "Data Entry":
 
     if submitted:
         # Collect data from form fields
-        customer_id = st.session_state.customer_id # Access from session state
-        customer_email = st.session_state.customer_email
-        customer_phone = st.session_state.customer_phone
-        product_name = st.session_state.product_name
-        product_description = st.session_state.product_description
-        initial_price = st.session_state.initial_price
-        amount_sold = st.session_state.amount_sold
-        discount = st.session_state.discount
-        stock_quantity = st.session_state.stock_quantity
-        order_id = st.session_state.order_id
-        order_date = st.session_state.order_date
-        state = st.session_state.state
-        country = st.session_state.country
-        payment_method = st.session_state.payment_method
+        st.session_state.customer_id = customer_id# Access from session state
+        st.session_state.customer_email = customer_email
+        st.session_state.customer_phone = customer_phone
+        st.session_state.product_name = product_name
+        st.session_state.product_description = product_description
+        st.session_state.initial_price = initial_price
+        st.session_state.amount_sold = amount_sold
+        st.session_state.discount = discount
+        st.session_state.stock_quantity = stock_quantity
+        st.session_state.order_id = order_id
+        st.session_state.order_date = order_date
+        st.session_state.state = state
+        st.session_state.country = country
+        st.session_state.payment_method = payment_method
 
     data = {
         "customer_id" : customer_id,
