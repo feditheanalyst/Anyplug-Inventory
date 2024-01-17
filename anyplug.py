@@ -117,21 +117,20 @@ if selected == "Data Entry":
 
     if submitted:
         # Collect data from form fields
-        form_data = st.form_values(key='my_form')
-        customer_id = form_data['customer_id'] # Access from session state
-        customer_email = form_data['customer_email']
-        customer_phone = form_data['customer_phone']
-        product_name = form_data['product_name']
-        product_description = form_data['product_description']
-        initial_price = form_data['initial_price']
-        amount_sold = form_data['amount_sold']
-        discount = form_data['discount']
-        stock_quantity = form_data['stock_quantity']
-        order_id = form_data['order_id']
-        order_date = form_data['order_date']
-        state = form_data['state']
-        country = form_data['country']
-        payment_method = form_data['payment_method']
+        customer_id = st.session_state.customer_id # Access from session state
+        customer_email = st.session_state.customer_email
+        customer_phone = st.session_state.customer_phone
+        product_name = st.session_state.product_name
+        product_description = st.session_state.product_description
+        initial_price = st.session_state.initial_price
+        amount_sold = st.session_state.amount_sold
+        discount = st.session_state.discount
+        stock_quantity = st.session_state.stock_quantity
+        order_id = st.session_state.order_id
+        order_date = st.session_state.order_date
+        state = st.session_state.state
+        country = st.session_state.country
+        payment_method = st.session_state.payment_method
 
     data = {
         "customer_id" : customer_id,
