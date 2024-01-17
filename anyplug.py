@@ -152,7 +152,7 @@ if selected == "Data Entry":
     try:
         supabase.table("plug").insert(data).execute()
         st.success("Data Saved")
-    except Exception as e:
+    except:
         st.error("Error saving data")
 
 elif selected == "Analytics":
