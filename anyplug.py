@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import streamlit as st
 from streamlit_option_menu import option_menu
 # from streamlit_gsheets import GSheetsConnection
-import gspread
+# import gspread
 import toml
 import pygsheets
 import mysql.connector
