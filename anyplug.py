@@ -10,7 +10,7 @@ from streamlit_option_menu import option_menu
 # from streamlit_gsheets import GSheetsConnection
 # import gspread
 import toml
-import pygsheets
+# import pygsheets
 import mysql.connector
 import plotly.graph_objects as go
 import plotly.express as px
