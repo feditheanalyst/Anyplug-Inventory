@@ -7,15 +7,15 @@ import pandas as pd
 import matplotlib.pyplot as plt 
 import streamlit as st
 from streamlit_option_menu import option_menu
-from streamlit_gsheets import GSheetsConnection
+# from streamlit_gsheets import GSheetsConnection
 import gspread
 import toml
 import pygsheets
 import mysql.connector
 import plotly.graph_objects as go
 import plotly.express as px
-from st_supabase_connection import SupabaseConnection
-from supabase import create_client, Client
+# from st_supabase_connection import SupabaseConnection
+# from supabase import create_client, Client
 from prophet import Prophet 
 from prophet.plot import plot_plotly, plot_components_plotly 
 import sqlite3
