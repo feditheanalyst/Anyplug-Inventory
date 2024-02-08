@@ -252,7 +252,7 @@ if selected == "Forecast":
     df2 = df1[["order_date", "amount_sold"]]
 
     df2.columns = ["ds", "y"]
-
+    df2.dropna(inplace = True) 
     model = Prophet()
     model.fit(df2)
 
